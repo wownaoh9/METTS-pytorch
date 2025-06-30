@@ -9,7 +9,7 @@ A PyTorch implementation of [**METTS: Multilingual Emotional Text-to-Speech by C
 - 2025/6/30: First Initial Commit
 
 ## Dependencies
-We recommend using a Python 3.9 environment.
+We recommend using a Python 3.10 environment.
 
 You can install the Python dependencies with
 ```
