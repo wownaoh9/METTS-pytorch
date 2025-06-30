@@ -204,7 +204,7 @@ class FastSpeech2(nn.Module):
             train = train
         )
 
-        #six conformer decoder to compute mel_loss seperately
+        #six conformer decoder to compute mel_loss seperately.
         dec_output_one, dec_output_two, dec_output_three, dec_output_four, dec_output_five, dec_output_six, mel_mask = self.decoder(output, mel_mask)
 
         output_mellinear_one = self.mel_linear(dec_output_one)
