@@ -1,0 +1,58 @@
+max_seq_len: 1000 # max sequence length of LJSpeech is 870
+max_mel_len: 1000
+
+conformer:
+  encoder_layer: 6
+  encoder_head: 8
+  encoder_hidden: 384
+  # decoder_layer: 6
+  decoder_head: 8
+  decoder_hidden: 384
+  feed_forward_expansion_factor: 4
+  conv_expansion_factor: 2
+  conv_kernel_size: 31
+  half_step_residual: True
+  encoder_dropout: 0.1
+  decoder_dropout: 0.1
+
+mel_conformer:
+  encoder_layer: 2
+  encoder_head: 8
+  encoder_hidden: 80
+  feed_forward_expansion_factor: 4
+  conv_expansion_factor: 2
+  conv_kernel_size: 31
+  half_step_residual: True
+  encoder_dropout: 0.1
+
+gst:
+  use_gst: True
+  conv_filters: [32, 32, 64, 64, 128, 128]
+  n_mel_channels: 80
+  ref_enc_gru_size: 128
+  in_channels: 128
+  E: 256
+  token_num: 10
+  num_heads: 8
+
+flow:
+  inter_channels: 16
+  hidden_channels: 16
+  gin_channels: 16
+
+FG_proj:
+  out_channels: 16
+
+variance_predictor:
+  filter_size: 384
+  kernel_size: 3
+  dropout: 0.5
+
+variance_embedding:
+  pitch_quantization: "linear" # support 'linear' or 'log', 'log' is allowed only if the pitch values are not normalized during preprocessing
+  energy_quantization: "linear" # support 'linear' or 'log', 'log' is allowed only if the energy values are not normalized during preprocessing
+  n_bins: 384
+
+vocoder:
+  model: "HiFi-GAN" # support 'HiFi-GAN', 'MelGAN'
+  speaker: "universal" # support  'LJSpeech', 'universal'
