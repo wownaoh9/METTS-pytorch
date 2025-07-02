@@ -1,4 +1,5 @@
 # METTS - PyTorch Implementation (wip)
+METTS: Multilingual Emotional Text-to-Speech by Cross-Speaker and Cross-Lingual Emotion Transfer
 
 A PyTorch implementation of [**METTS: Multilingual Emotional Text-to-Speech by Cross-Speaker and Cross-Lingual Emotion Transfer**](https://ieeexplore.ieee.org/document/10423864). 
 
